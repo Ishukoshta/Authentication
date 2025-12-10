@@ -11,11 +11,13 @@ const EmailVerify = () => {
   const navigate = useNavigate()
 
   const inputRef = useRef([])
+
   const handleInput = (e, index) => {
     if (e.target.value.length > 0 && index < inputRef.current.length - 1) {
       inputRef.current[index + 1].focus();
     }
   }
+  
   const handleKeydown = (e, index) => {
     if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
       inputRef.current[index - 1].focus();
